@@ -1,48 +1,59 @@
-# Multi-Server Queueing System Simulation Engine
+# Advanced Stochastic Queueing Engine (Kendall's Notation)
 
 ## Project Overview
 
-This repository contains a specialized web-based simulation platform designed for the quantitative analysis of queueing systems. Developed as a **collaborative group effort**, the application implements mathematical models (M/M/1 and M/M/S) to simulate stochastic processes in server environments, focusing on throughput, wait times, and resource utilization.
+This platform is a high-performance simulation suite designed to model and analyze complex queueing architectures. It provides a computational interface for evaluating performance metrics across various stochastic processes, ranging from simple Poisson arrivals to generalized distribution models ().
+
+The project was developed as a **unified group effort** to provide students and researchers with a tool to visualize system bottlenecks and stability conditions in real-time.
 
 **Live Deployment:** [mas-simulator-calculator.vercel.app](https://mas-simulator-calculator.vercel.app/)
 
-## Technical Architecture
+## Supported Queueing Models
 
-The system is built using a modern, type-safe stack designed for performance and scalability:
+The engine implements the following models based on Kendall's Notation:
 
-* **Core Framework:** Next.js
-* **Logic Layer:** TypeScript (Strictly typed for mathematical precision)
-* **Styling:** Tailwind CSS (Optimized for responsive utility-first design)
-* **Package Management:** pnpm (Efficient, content-addressable dependency handling)
-* **CI/CD:** Automated deployment via GitHub and Vercel
+* **M/M/1 & M/M/s:** Markovian arrivals and service times with single or multiple servers.
+* **M/G/1 & M/G/s:** Poisson arrivals with General service time distributions (requires mean and variance).
+* **G/G/1 & G/G/s:** General arrival and General service distributions, utilizing the Kingman’s formula for approximations in complex multi-server environments.
 
-## System Capabilities
+## Technical Core
 
-The simulator evaluates complex queueing scenarios by processing the following parameters:
+* **Framework:** Next.js (React)
+* **Language:** TypeScript (Ensuring type safety for all mathematical operations)
+* **Styling:** Tailwind CSS (Cyber-industrial UI design)
+* **State Management:** React Hooks for real-time parameter synchronization
+* **Deployment:** Vercel (CI/CD Integrated)
 
-* **Stochastic Inputs:** Arrival Rate () and Service Rate ().
-* **Infrastructure Scaling:** Support for Multi-Server () configurations.
-* **Preemptive Logic:** Implementation of priority-based scheduling where high-priority tasks can interrupt active low-priority service sessions.
-* **Performance Metrics:** Real-time generation of System Utilization (), Expected Number in System (), and Expected Wait Time ().
+## Mathematical Indicators
 
-## Group Contributions
+The system calculates and visualizes the following key performance indicators (KPIs):
 
-This project represents a synchronized group effort. The team worked in parallel to ensure the integration of complex backend probability logic with a high-fidelity frontend user interface.
+* **Utilization Factor ():** The fraction of time the server(s) are busy.
+* Condition for stability: 
 
-* **Mathematical Modeling:** Development of the core M/M/S algorithms and preemption logic.
-* **Frontend Infrastructure:** Creation of the reactive dashboard and real-time data visualization components.
-* **Systems Operations:** Configuration of the Git workflow, repository management, and cloud deployment.
 
-## Installation and Local Development
+* **Little’s Law Implementation:** Calculation of  to determine the average number of customers in the system.
+* **Waiting Time ():** Expected time a customer spends in the queue before service begins.
+* **System Length ():** Expected number of customers currently in the system (Queue + Service).
+* **Probability of Idleness ():** The probability that the system is empty.
 
-### Prerequisites
+## Advanced Features
 
-* Node.js (v18.0 or higher)
-* pnpm (Recommended) or npm
+* **Preemptive Priority Scheduling:** The engine supports scenarios where high-priority arrivals can interrupt low-priority service sessions.
+* **Step-by-Step Simulation Logs:** A detailed breakdown of every event (Arrival, Service Start, Completion) to verify the mathematical accuracy of the simulation.
+* **Interactive Visualizations:** Live Gantt charts and performance tables reflecting the stochastic nature of the system.
 
-### Setup Instructions
+## Group Contribution Statement
 
-1. Clone the repository:
+This project is the result of a coordinated group effort. The team collaborated on the following domains:
+
+* **Algorithm Development:** Translation of complex Queueing Theory formulas into executable TypeScript functions.
+* **Architectural Design:** Structuring the Next.js application for modularity and performance.
+* **DevOps & Quality Assurance:** Implementing the Git workflow, managing the Vercel deployment pipeline, and verifying results against theoretical benchmarks.
+
+## Installation and Local Setup
+
+1. **Clone the Repository:**
 ```bash
 git clone https://github.com/SufiyanKhanCloud/MAS-SimulatorV2.git
 cd MAS-SimulatorV2
@@ -50,25 +61,20 @@ cd MAS-SimulatorV2
 ```
 
 
-2. Install dependencies:
+2. **Install Dependencies:**
 ```bash
 pnpm install
 
 ```
 
 
-3. Initialize the development environment:
+3. **Execute Local Server:**
 ```bash
 pnpm dev
 
 ```
 
 
-4. Access the local instance:
-Navigate to `http://localhost:3000` in your web browser.
-
-## Deployment
-
-The project is configured for a Continuous Deployment pipeline. Any modifications pushed to the `main` branch are automatically built and deployed to the Vercel production environment.
+4. **Access Instance:** Open `http://localhost:3000`
 
 ---
