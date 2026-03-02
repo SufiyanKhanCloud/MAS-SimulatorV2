@@ -55,7 +55,6 @@ RUN chown nextjs:nodejs .next
 
 # Copy ONLY the essential files needed to run the app. 
 # We explicitly leave the massive node_modules folder behind.
-COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
