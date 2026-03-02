@@ -1,0 +1,60 @@
+name: Continuous Integration
+
+# This tells GitHub to run this pipeline every time code is pushed to the main branch
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  # ==========================================
+  # JOB 1: Test the Next.js Application
+  # ==========================================
+  test-application:
+    name: Build and Test Next.js
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install pnpm
+        run: npm install -g pnpm@10.30.3
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Next.js App
+        run: pnpm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+
+  # ==========================================
+  # JOB 2: Test the Docker Build
+  # ==========================================
+  test-docker:
+    name: Verify Dockerfile
+    needs: test-application # This ensures Docker only builds if the Next.js app compiles successfully
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker Image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false # We are just testing the build right now, not pushing to a registry yet
+          tags: mas-simulator:test
+          # This utilizes GitHub Actions cache to make future Docker builds incredibly fast
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
