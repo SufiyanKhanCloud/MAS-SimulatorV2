@@ -1,4 +1,5 @@
 # Advanced Stochastic Queueing Engine (Kendall's Notation)
+[![CI/CD Pipeline](https://github.com/SufiyanKhanCloud/MAS-SimulatorV2/actions/workflows/ci.yml/badge.svg)](https://github.com/SufiyanKhanCloud/MAS-SimulatorV2/actions/workflows/ci.yml)
 
 ## Project Overview
 
