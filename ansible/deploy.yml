@@ -1,7 +1,7 @@
 ---
 - name: Deploy MAS Simulator to AWS EC2
   hosts: webservers
-  become: yes # This tells Ansible to run commands as root (sudo)
+  become: yes
 
   tasks:
     - name: Update apt cache
@@ -28,12 +28,9 @@
         state: started
         enabled: yes
 
+    # --- NEW SHELL COMMANDS ---
+    - name: Remove old container if it exists
+      shell: docker rm -f nextjs-mas-simulator || true
+
     - name: Pull and run the MAS Simulator container
-      community.docker.docker_container:
-        name: nextjs-mas-simulator
-        image: sufiyankhan10/mas-simulator:latest
-        state: started
-        restart_policy: unless-stopped
-        published_ports:
-          - "3000:3000"
-        pull: true
+      shell: docker run -d --name nextjs-mas-simulator -p 3000:3000 --restart unless-stopped sufiyankhan10/mas-simulator:latest
