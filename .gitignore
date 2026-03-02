@@ -10,3 +10,11 @@ node_modules/
 .next/
 .env*.local
 .DS_Store
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Ansible
+hosts.ini
