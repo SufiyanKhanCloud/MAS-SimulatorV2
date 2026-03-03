@@ -48,6 +48,15 @@ The engine implements the following models based on Kendall's Notation:
 * **Infrastructure as Code (IaC):** Terraform (AWS EC2 & Security Groups)
 * **Configuration Management:** Ansible
 <img width="1127" height="538" alt="Architecture" src="https://github.com/user-attachments/assets/5bd2eb0d-cef6-4f3d-97ac-9857ef2b84fc" />
+<img width="1104" height="239" alt="aws-ec2-running" src="https://github.com/user-attachments/assets/5af4bdb2-42d2-40ad-9afc-bebecaf68dc5" />
+<p align="center">
+<img width="677" height="623" alt="docker-hub-registry" src="https://github.com/user-attachments/assets/7d52bae9-d610-4d86-b6da-964a1b389888" /></p>
+<img width="995" height="534" alt="github-actions-pipeline" src="https://github.com/user-attachments/assets/22fdef4c-067f-40a8-8278-87c3c8aef1d4" />
+<p align="center">
+  <img width="796" height="489" alt="terraform-apply" src="https://github.com/user-attachments/assets/2f5c13e4-10c7-4386-8152-fae69d2585bd" />
+</p>
+
+
 
 ## Automated DevOps Pipeline
 
