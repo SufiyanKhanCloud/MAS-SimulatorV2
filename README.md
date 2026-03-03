@@ -9,6 +9,25 @@ The project was developed as a **unified group effort** to provide students and 
 
 **Live Deployment:** [mas-simulator-calculator.vercel.app](https://mas-simulator-calculator.vercel.app/)
 
+<img width="1366" height="685" alt="Screenshot from 2026-03-03 10-12-30" src="https://github.com/user-attachments/assets/fd6fbf2d-8bdf-4200-9a33-94adecf03285" />
+<img width="955" height="646" alt="Screenshot from 2026-03-03 10-35-00" src="https://github.com/user-attachments/assets/14c24697-c763-4f6b-9efc-b3ad7c701bae" />
+<img width="955" height="646" alt="Screenshot from 2026-03-03 10-35-21" src="https://github.com/user-attachments/assets/27ceed24-8276-4f90-8420-acbbb2a2e329" />
+<p align="center">
+  <img width="538" height="603" alt="Screenshot from 2026-03-03 10-35-53" src="https://github.com/user-attachments/assets/cc39093f-64d4-44ff-b8fa-fb705ecb1870" />
+</p>
+<img width="1355" height="621" alt="Screenshot from 2026-03-03 10-36-14" src="https://github.com/user-attachments/assets/5ebcb2ba-c60d-452c-867a-31460ca43d27" />
+<img width="1355" height="648" alt="Screenshot from 2026-03-03 10-36-34" src="https://github.com/user-attachments/assets/62bbad4b-948b-4020-bf47-56e176e28372" />
+<img width="1355" height="648" alt="Screenshot from 2026-03-03 10-36-42" src="https://github.com/user-attachments/assets/4de1aeb9-6603-4daf-a706-e4a7ad3ba3be" />
+<img width="1360" height="507" alt="Screenshot from 2026-03-03 10-36-57" src="https://github.com/user-attachments/assets/2f6b716a-4bd0-41f4-a4b1-4a11be6ed3c5" />
+<img width="1353" height="540" alt="Screenshot from 2026-03-03 10-37-12" src="https://github.com/user-attachments/assets/8e583188-f71d-4505-bb66-e388fc8281f5" />
+<img width="1353" height="540" alt="Screenshot from 2026-03-03 10-37-20" src="https://github.com/user-attachments/assets/cc9addfa-c5d0-4374-bbac-0012c1b15a8f" />
+<p align="center">
+ <img width="628" height="602" alt="Screenshot from 2026-03-03 10-38-00" src="https://github.com/user-attachments/assets/830a37de-73de-4bb1-8907-5c2641887066" />
+</p>
+<p align="center">
+  <img width="638" height="636" alt="Screenshot from 2026-03-03 10-38-15" src="https://github.com/user-attachments/assets/44e77822-4385-4769-ae7c-d8366e5a1213" />
+</p>
+
 ## Supported Queueing Models
 
 The engine implements the following models based on Kendall's Notation:
