@@ -28,6 +28,7 @@ The engine implements the following models based on Kendall's Notation:
 * **CI/CD Pipeline:** GitHub Actions
 * **Infrastructure as Code (IaC):** Terraform (AWS EC2 & Security Groups)
 * **Configuration Management:** Ansible
+<img width="1127" height="538" alt="Architecture" src="https://github.com/user-attachments/assets/5bd2eb0d-cef6-4f3d-97ac-9857ef2b84fc" />
 
 ## Automated DevOps Pipeline
 
