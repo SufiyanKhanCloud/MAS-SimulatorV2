@@ -147,3 +147,27 @@ docker build -t mas-simulator .
 
 ```bash
 docker run -p 3000:3000 mas-simulator
+
+```
+
+### Option C: Observability Stack (Prometheus and Grafana)
+
+To view real-time metrics, ensure the Next.js development server (Option A) is running, then open a new terminal:
+
+1. **Navigate to the monitoring directory:**
+```bash
+cd monitoring
+```
+
+
+2. **Spin up the Docker Compose stack:**
+
+```bash
+docker-compose up -d
+```
+
+
+3. **Access Dashboards:**
+
+* **Prometheus Targets:** `http://localhost:9090/targets`
+* **Grafana Dashboard:** `http://localhost:3001` (Default login: admin / admin)
