@@ -295,6 +295,14 @@ export default function QueueSimulator() {
                 }
                 setIsRunning(true)
                 setQInput(input)
+                // --- PROMETHEUS TRACKING CODE START ---
+                fetch('/api/track', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  // This will dynamically log things like "Calculator-MM1" or "Calculator-GGS"
+                  body: JSON.stringify({ queueType: `Calculator-${selectedQModel}` }) 
+                }).catch(console.error);
+                // --- PROMETHEUS TRACKING CODE END ---
                 setTimeout(() => {
                   setQResults(results)
                   setIsRunning(false)
@@ -372,6 +380,13 @@ export default function QueueSimulator() {
                 setIsRunning(true)
                 setLastInputView("mm1")
                 setQueueTypeLabel(undefined)
+                // --- PROMETHEUS TRACKING CODE START ---
+                fetch('/api/track', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ queueType: 'M/M/1' }) 
+                }).catch(console.error); 
+                // --- PROMETHEUS TRACKING CODE END ---
                 setTimeout(() => {
                   const res = mm1Simulation(lam, mu, priority)
                   setResult(res)
@@ -413,6 +428,13 @@ export default function QueueSimulator() {
                 setIsRunning(true)
                 setLastInputView("mms")
                 setQueueTypeLabel(undefined)
+                // --- PROMETHEUS TRACKING CODE START ---
+                fetch('/api/track', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ queueType: 'M/M/S' }) 
+                }).catch(console.error); 
+                // --- PROMETHEUS TRACKING CODE END ---
                 setTimeout(() => {
                   const res = mmsSSimulation(lam, mu, s, priority)
                   setResult(res)
@@ -450,6 +472,13 @@ export default function QueueSimulator() {
                 setIsRunning(true)
                 setLastInputView("mg1")
                 setQueueTypeLabel("M/G/1")
+                // --- PROMETHEUS TRACKING CODE START ---
+                fetch('/api/track', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ queueType: 'M/G/1' }) 
+                }).catch(console.error); 
+                // --- PROMETHEUS TRACKING CODE END ---
                 setTimeout(() => {
                   const res = mg1Simulation(lam, distParams, priority)
                   setResult(res)
@@ -493,6 +522,13 @@ export default function QueueSimulator() {
                 setIsRunning(true)
                 setLastInputView("mgs")
                 setQueueTypeLabel(`M/G/${s}`)
+                // --- PROMETHEUS TRACKING CODE START ---
+                fetch('/api/track', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ queueType: 'M/G/S' }) 
+                }).catch(console.error); 
+                // --- PROMETHEUS TRACKING CODE END ---
                 setTimeout(() => {
                   const res = mgsSSimulation(lam, distParams, s, priority)
                   setResult(res)
