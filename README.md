@@ -58,7 +58,19 @@ The engine implements the following models based on Kendall's Notation:
   <img width="796" height="489" alt="terraform-apply" src="https://github.com/user-attachments/assets/2f5c13e4-10c7-4386-8152-fae69d2585bd" />
 </p>
 
+## Real-Time Observability (Prometheus and Grafana)
 
+To transition this project from a standard web app to a production-ready application, a complete Application Performance Monitoring (APM) stack was implemented using Prometheus and Grafana via Docker. 
+
+This allows for real-time tracking of both hardware health and custom business logic (e.g., tracking which queue models users are calculating the most).
+
+<img width="885" height="471" alt="Screenshot from 2026-03-04 12-02-19" src="https://github.com/user-attachments/assets/d48e582e-a476-4d7f-874c-87ab194e48e4" />
+
+### Architecture and Data Flow
+1. **Next.js Backend (prom-client):** Acts as the data exporter. An API route at `/api/metrics` is exposed, specifically bypassing Next.js App Router caching (`force-dynamic`) to ensure live telemetry delivery.
+2. **Custom Telemetry Tracking:** A `/api/track` route listens for frontend events. Whenever a user calculates a model, the frontend pings this endpoint to increment a custom Prometheus counter (`mas_simulator_calculations_total`) with dynamic labels.
+3. **Prometheus (Docker):** Scrapes the Next.js API endpoint every 5 seconds. Host networking routing (`host.docker.internal:host-gateway`) allows the isolated container to communicate with the local host server.
+4. **Grafana (Docker):** Queries Prometheus via PromQL to visualize the metrics. The configuration is stored as code in the `/monitoring` directory.
 
 ## Automated DevOps Pipeline
 
