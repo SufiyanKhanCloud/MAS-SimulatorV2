@@ -49,7 +49,7 @@ The engine implements the following models based on Kendall's Notation:
 * **Infrastructure as Code (IaC):** Terraform (AWS EC2 & Security Groups)
 * **Configuration Management:** Ansible
 
-<img width="1127" height="538" alt="Architecture" src="https://github.com/user-attachments/assets/5bd2eb0d-cef6-4f3d-97ac-9857ef2b84fc" />
+<img width="1262" height="368" alt="Screenshot from 2026-03-05 10-45-45" src="https://github.com/user-attachments/assets/c048cf13-520b-493d-a075-7368afce7c13" />
 <img width="1104" height="239" alt="aws-ec2-running" src="https://github.com/user-attachments/assets/5af4bdb2-42d2-40ad-9afc-bebecaf68dc5" />
 <p align="center">
 <img width="677" height="623" alt="docker-hub-registry" src="https://github.com/user-attachments/assets/7d52bae9-d610-4d86-b6da-964a1b389888" /></p>
@@ -73,7 +73,7 @@ This allows for real-time tracking of both hardware health and custom business l
 4. **Grafana (Docker):** Queries Prometheus via PromQL to visualize the metrics. The configuration is stored as code in the `/monitoring` directory.
 
 ## Automated DevOps Pipeline
-
+<img width="1127" height="538" alt="Architecture" src="https://github.com/user-attachments/assets/5bd2eb0d-cef6-4f3d-97ac-9857ef2b84fc" />
 This project features a complete, zero-touch deployment pipeline designed for highly scalable environments:
 
 * **Containerization:** The application is packaged using an optimized, multi-stage `Dockerfile` based on `node:20-alpine`. It utilizes standalone Next.js builds and runs as a non-root user for enhanced security.
